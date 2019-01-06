@@ -5,7 +5,7 @@ import 'package:core/src/redux/user/user_state.dart';
 
 UserState userReducer(UserState state, dynamic action) {
   return state.copyWith(
-    active: LoadingStatus.success,
+    //active: LoadingStatus.success,
     activeUsers: action.users,
   );
 

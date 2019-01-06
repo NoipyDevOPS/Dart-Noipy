@@ -10,20 +10,21 @@ import 'package:redux/redux.dart';
 
 class UserPageViewModel{
   UserPageViewModel({
-    @required this.loading_status,
-    //@required this.user,
+    //@required this.loading_status,
+    @required this.users,
   });
 
-  final LoadingStatus loading_status;
-  //final List<User> user;
+  //final LoadingStatus loading_status;
+  final List<User> users;
 
   static UserPageViewModel fromStore(
     Store<AppState> store,
-    UserListStatus loading_status,
+    //UserListStatus loading_status,
   ) {
     return UserPageViewModel(
-      loading_status: store.state.userState.active,
-      //user: activeUsersSelector(store.state),
+      //loading_status: store.state.userState.active,
+      users: store.state.userState.activeUsers,
+      //activeUsersSelector(store.state),
       //refreshEvents: () => store.dispatch(RefreshEventsAction(type)),
     );
   }
