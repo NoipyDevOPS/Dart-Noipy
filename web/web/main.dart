@@ -31,8 +31,8 @@ final InjectorFactory rootInjector = self.rootInjector$Injector;
 void main() async {
   pwa.Client();
   await _initializeTranslations();
-
-  runApp(ng.AppComponentNgFactory, createInjector: rootInjector);
+  
+  runApp(ng.AppComponentFactory, createInjector: rootInjector);
 }
 
 void _initializeTranslations() async {

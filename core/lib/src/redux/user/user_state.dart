@@ -6,26 +6,27 @@ import 'package:meta/meta.dart';
 @immutable
 class UserState{
   UserState({
-    @required this.active,
+    @required this.currentUser,
     @required this.activeUsers
   })
 
-  LoadingStatus active;
+  //final LoadingStatus active;
+  final User currentUser;
   final List<User> activeUsers;
 
   factory UserState.initial() {
     return UserState(
-      active: LoadingStatus.idle,
+      currentUser: null,
       activeUsers: [],
     );
   }
 
   UserState copyWith({
-    LoadingStatus active,
+    User currentUser,
     List<User> activeUsers,
   }) {
     return UserState(
-      active: active ?? this.active,
+      currentUser: currentUser ?? this.currentUser,
       activeUsers: activeUsers ?? this.activeUsers,
     );
   }
@@ -35,12 +36,12 @@ class UserState{
       identical(this, other) ||
       other is UserState &&
           runtimeType == other.runtimeType &&
-          active == other.active &&
+          currentUser == other.currentUser &&
           activeUsers == other.activeUsers;
 
   @override
   int get hashCode =>
-      active.hashCode ^
+      currentUser.hashCode ^
       activeUsers.hashCode;
 
 }
