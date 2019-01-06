@@ -13,7 +13,8 @@ class Routes {
   static final List<RouteDefinition> all = [
     RouteDefinition(
       routePath: RoutePaths.home,
-      useAsDefault: true
+      useAsDefault: true,
+      //component: home_page.,
     )
   ];
 }

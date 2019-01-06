@@ -23,30 +23,11 @@ class AppComponent implements OnInit, AfterContentInit {
 
   @override
   void ngOnInit() => _store.dispatch(InitAction());
-  
-}
-/*
-class AppComponent implements OnInit, AfterContentInit {
-  AppComponent();
-
-  var name = 'Angular';
-
-  @override
-  void ngOnInit() => _store.dispatch(InitAction());
 
   @override
   void ngAfterContentInit() => document.body.classes.add('loaded');
-
-  void toggleTheaterDropdown() async {
-    if (!theaterDropdownActive) {
-      _theaterController = await TheaterDropdownController.loadAndShow(
-        _loader,
-        theaterContainer,
-        background: '#152451',
-      );
-    } else {
-      _theaterController.hideAndDestroy();
-    }
+  
+  void toggleNavbarDropdown() async {
+    print("toggleNavbarDropdown");
   }
 }
-*/
