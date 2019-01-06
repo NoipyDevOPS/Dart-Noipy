@@ -1,9 +1,10 @@
-#
+#author: Allan Nava 
+#date: 06/01/2019
 name: core
 description: Common shared code for noipy mobile and web.
 version: 0.0.1
 #homepage: https://www.example.com
-#author: Allan Nava 
+#
 #
 environment:
   sdk: '>=2.0.0-dev.58.0 <3.0.0'
@@ -15,8 +16,9 @@ dependencies:
   http: ^0.12.0
   reselect: ^0.4.0
   key_value_store: ^1.0.0
-
+#
 dev_dependencies:
   test: ^1.3.0
   mockito: ^3.0.0
   intl_translation: 0.17.0
+#

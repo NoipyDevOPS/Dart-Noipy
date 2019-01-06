@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:core/core.dart';
@@ -8,11 +10,11 @@ import 'package:web/src/routes.dart';
   templateUrl: 'nav_bar_component.html',
   styleUrls: ['nav_bar_component.css'],
   directives: [
-    routerDirectives(),
+    routerDirectives,
   ],
   exports: [RoutePaths],
 )
-class NavBarComponent {
+class NavBarComponent{
   NavBarComponent(this.messages);
   final Messages messages;
 

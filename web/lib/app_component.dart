@@ -11,7 +11,7 @@ import 'src/routes.dart';
   selector: 'my-app',
   styleUrls: ['app_component.css'],
   directives: [
-    //AppBarComponent,
+    AppBarComponent,
     routerDirectives,
   ],
   exports: [Routes],

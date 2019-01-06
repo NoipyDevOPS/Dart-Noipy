@@ -18,4 +18,5 @@ export 'src/redux/user/user_selectors.dart';
 export 'src/redux/user/user_state.dart';
 export 'src/redux/store.dart';
 
-export 'src/viewmodels/home_page_view_model.dart';
+//export 'src/viewmodels/home_page_view_model.dart';
+export 'src/viewmodels/user_page_view_model.dart';
