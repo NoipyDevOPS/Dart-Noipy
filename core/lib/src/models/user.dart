@@ -1,9 +1,9 @@
 import 'package:meta/meta.dart';
 
 /**
- * User List Type
+ * User List Status
  */
-enum UserListType {
+enum UserListStatus {
   active,
   notActive
 }
