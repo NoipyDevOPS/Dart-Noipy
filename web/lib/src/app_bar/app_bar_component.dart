@@ -28,6 +28,9 @@ class AppBarComponent implements OnInit, OnDestroy {
   StreamSubscription<RouterState> _routeListener;
   Timer _scrollTimer;
 
+  bool hide               = false;
+  bool isUserDetailsPage  = false;
+
   @override
   void ngOnInit() {
     //_listenForRoutes();
@@ -43,6 +46,16 @@ class AppBarComponent implements OnInit, OnDestroy {
     //_theaterButtonClicked.close();
     _routeListener.cancel();
     _scrollTimer.cancel();
+  }
+
+  void _listenForRoutes() {
+    _routeListener = _router.onRouteActivated.listen((route) {
+      final path = route.routePath.path;
+      //isUserDetailsPage = path == RoutePaths.userDetails.path ||
+      //    path == RoutePaths.showDetails.path;
+
+      hide = isUserDetailsPage;
+    });
   }
 
 }

@@ -8,6 +8,7 @@ export 'src/i18n/messages.dart';
 
 export 'src/networking/noipy_api.dart';
 
+export 'src/redux/_common/search.dart';
 export 'src/redux/_common/common_actions.dart';
 export 'src/redux/app/app_reducer.dart';
 export 'src/redux/app/app_state.dart';
