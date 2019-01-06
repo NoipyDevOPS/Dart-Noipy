@@ -3,7 +3,7 @@ import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:core/core.dart';
 import 'package:redux/redux.dart';
-//import 'package:web/src/app_bar/app_bar_component.dart';
+import 'package:web/src/app_bar/app_bar_component.dart';
 
 import 'src/routes.dart';
 

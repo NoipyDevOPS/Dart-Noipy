@@ -1,22 +1,23 @@
 import 'dart:async';
+import 'dart:html';
 
-import 'package:angular/angular.dart';
-import 'package:angular_router/angular_router.dart';
-import 'package:core/core.dart';
-import 'package:redux/redux.dart';
-import 'package:web/src/routes.dart';
+enum ScrollDirection { up, down }
+
+typedef void ScrollDirectionChangedCallback(ScrollDirection newDirection);
 
 
-@Component(
-  selector: 'app-bar',
-  templateUrl: 'app_bar_component.html',
-  styleUrls: ['app_bar_component.css'],
-  directives: [
-    //NavBarComponent,
-    routerDirectives,
-  ],
-  exports: [RoutePaths],
-)
-class AppBarComponent {
+Timer listenForScrollDirectionChanges(ScrollDirectionChangedCallback callback) {
+  var previousTop = 0;
 
+  return Timer.periodic(const Duration(milliseconds: 250), (_) {
+    final top = document.body.getBoundingClientRect().top;
+
+    if (top > previousTop || top > -160) {
+      callback(ScrollDirection.up);
+    } else if (top < previousTop) {
+      callback(ScrollDirection.down);
+    }
+
+    previousTop = top;
+  });
 }
