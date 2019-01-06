@@ -1,3 +1,6 @@
+/**
+ * Loading status 
+ */
 enum LoadingStatus {
   idle,
   loading,

@@ -4,6 +4,10 @@ import 'package:core/src/redux/_common/common_actions.dart';
 import 'package:core/src/redux/user/user_state.dart';
 
 UserState userReducer(UserState state, dynamic action) {
- 
-  return state;
+  return state.copyWith(
+    active: LoadingStatus.success,
+    activeUsers: action.users,
+  );
+
+  //return state;
 }

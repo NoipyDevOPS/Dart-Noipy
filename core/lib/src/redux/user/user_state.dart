@@ -7,16 +7,16 @@ import 'package:meta/meta.dart';
 class UserState{
   UserState({
     @required this.active,
-    //@required this.activeUsers
+    @required this.activeUsers
   })
 
-  final LoadingStatus active;
-  //final List<User> activeUsers;
+  LoadingStatus active;
+  final List<User> activeUsers;
 
   factory UserState.initial() {
     return UserState(
       active: LoadingStatus.idle,
-      //activeUsers: [],
+      activeUsers: [],
     );
   }
 
@@ -26,8 +26,21 @@ class UserState{
   }) {
     return UserState(
       active: active ?? this.active,
-      //activeUsers: activeUsers ?? this.activeUsers,
+      activeUsers: activeUsers ?? this.activeUsers,
     );
   }
-  
+
+   @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UserState &&
+          runtimeType == other.runtimeType &&
+          active == other.active &&
+          activeUsers == other.activeUsers;
+
+  @override
+  int get hashCode =>
+      active.hashCode ^
+      activeUsers.hashCode;
+
 }
