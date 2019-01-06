@@ -11,6 +11,13 @@ class AppState {
 
   final UserState userState;
 
+
+  factory AppState.initial() {
+    return AppState(
+      userState: UserState.initial()
+    );
+  }
+
   AppState copyWith({
     UserState userState,
   }) {
@@ -18,5 +25,7 @@ class AppState {
       userState: userState ?? this.userState,
     );
   }
+
+
 
 }

@@ -16,10 +16,14 @@ import 'src/routes.dart';
   ],
   exports: [Routes],
 )
-class AppComponent {
-  AppComponent();
+class AppComponent implements OnInit, AfterContentInit {
+  AppComponent(this._store, this._loader);
+  final Store<AppState> _store;
+  final ComponentLoader _loader;
 
-  var name = 'Angular';
+  @override
+  void ngOnInit() => _store.dispatch(InitAction());
+  
 }
 /*
 class AppComponent implements OnInit, AfterContentInit {

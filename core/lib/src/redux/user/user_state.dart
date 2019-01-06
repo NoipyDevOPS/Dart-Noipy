@@ -19,5 +19,15 @@ class UserState{
       activeUsers: [],
     );
   }
-  
+
+  UserState copyWith({
+    LoadingStatus active,
+    List<User> activeUsers,
+  }) {
+    return UserState(
+      active: active ?? this.active,
+      activeUsers: activeUsers ?? this.activeUsers,
+    );
+  }
+
 }

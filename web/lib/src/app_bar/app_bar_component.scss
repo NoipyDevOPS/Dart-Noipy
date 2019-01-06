@@ -1,0 +1,19 @@
+@import '../common';
+@import '../breakpoints';
+
+header {
+  background: #1C306D;
+  box-shadow: 0 10px 60px rgba(0, 0, 0, .4);
+  width: 100%;
+  height: 56px;
+  position: fixed;
+  top: 0;
+  opacity: 1;
+  z-index: 3000;
+  transition: opacity 350ms ease, top 350ms ease;
+
+  &.hidden {
+    top: -56px;
+    opacity: 0;
+  }
+}

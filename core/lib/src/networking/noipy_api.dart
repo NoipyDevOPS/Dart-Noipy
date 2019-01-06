@@ -7,7 +7,8 @@ import 'package:http/http.dart';
 import 'package:intl/intl.dart';
 
 class NoipyApi {
-  static bool useFinnish = false;
+  static bool useFinnish  = false;
+  static final baseUrl    = 'https://www.example.com';
 
   NoipyApi(this.client);
   final Client client;

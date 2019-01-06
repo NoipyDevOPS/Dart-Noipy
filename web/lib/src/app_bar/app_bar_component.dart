@@ -28,12 +28,12 @@ class AppBarComponent implements OnInit, OnDestroy {
 
   @override
   void ngOnInit() {
-    _listenForRoutes();
-    _scrollTimer = listenForScrollDirectionChanges((newDirection) {
+    //_listenForRoutes();
+    /*_scrollTimer = listenForScrollDirectionChanges((newDirection) {
       if (!isEventDetailsPage) {
         hide = newDirection == ScrollDirection.down;
       }
-    });
+    });*/
   }
 
   @override
