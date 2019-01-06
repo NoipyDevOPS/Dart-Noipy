@@ -9,7 +9,7 @@ final activeUsersSelector = createSelector2(
 );*/
 
 final activeUsersSelector = createSelector2(
-  (AppState state) => state.userState.active,
+  (AppState state) => state.userState.activeUsers,
   (AppState state) => state.searchQuery,
   _usersOrUserSearch,
 );
