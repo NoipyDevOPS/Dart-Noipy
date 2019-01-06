@@ -4,14 +4,16 @@ import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:core/core.dart';
 import 'package:redux/redux.dart';
-import 'package:web/src/routes.dart';
+//import 'package:web/src/routes.dart';
+import 'package:dart_noipy/src/routes.dart';
+import 'package:dart_noipy/src/app_bar/nav_bar/nav_bar_component.dart';
 
 @Component(
   selector: 'app-bar',
   templateUrl: 'app_bar_component.html',
   styleUrls: ['app_bar_component.css'],
   directives: [
-    //NavBarComponent,
+    NavBarComponent,
     routerDirectives,
   ],
   exports: [RoutePaths],

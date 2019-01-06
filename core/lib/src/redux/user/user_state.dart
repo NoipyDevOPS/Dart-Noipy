@@ -7,16 +7,16 @@ import 'package:meta/meta.dart';
 class UserState{
   UserState({
     @required this.active,
-    @required this.activeUsers
+    //@required this.activeUsers
   })
 
   final LoadingStatus active;
-  final List<User> activeUsers;
+  //final List<User> activeUsers;
 
   factory UserState.initial() {
     return UserState(
       active: LoadingStatus.idle,
-      activeUsers: [],
+      //activeUsers: [],
     );
   }
 
@@ -26,8 +26,8 @@ class UserState{
   }) {
     return UserState(
       active: active ?? this.active,
-      activeUsers: activeUsers ?? this.activeUsers,
+      //activeUsers: activeUsers ?? this.activeUsers,
     );
   }
-
+  
 }

@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:core/core.dart';
-import 'package:web/src/routes.dart';
+//import 'package:web/src/routes.dart';
+import 'package:dart_noipy/src/routes.dart';
 
 @Component(
   selector: 'nav-bar',

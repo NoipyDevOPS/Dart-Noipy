@@ -7,11 +7,13 @@ import 'package:reselect/reselect.dart';
 final activeUsersSelector = createSelector2(
   (AppState state) => state.userState.active,
 );*/
+/*
 final activeUsersSelector = createSelector2(
   (AppState state) => state.userState.active,
   (AppState state) => state.searchQuery,
   _usersOrUserSearch,
 );
+*/
 
 List<User> _usersOrUserSearch(List<User> users, String searchQuery) {
   return searchQuery == null
