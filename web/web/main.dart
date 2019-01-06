@@ -11,13 +11,20 @@ import 'package:redux/redux.dart';
 //import 'package:web/app_component.template.dart' as ng;
 import 'package:dart_noipy/app_component.dart' as ng;
 
-//import 'main.template.dart' as self;
+import 'main.template.dart' as self;
 
 final Store<AppState> _store = createStore(
   Client(),
   WebKeyValueStore(window.localStorage),
 );
 Store<AppState> storeFactory() => _store;
+
+@GenerateInjector([
+  const FactoryProvider(Store, storeFactory),
+  const ClassProvider(Messages),
+  routerProvidersHash,
+])
+final InjectorFactory rootInjector = self.rootInjector$Injector;
 
 void main() async {
   pwa.Client();

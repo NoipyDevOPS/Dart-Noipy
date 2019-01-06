@@ -16,7 +16,7 @@ class AppState {
   factory AppState.initial() {
     return AppState(
       searchQuery: null,
-      userState: UserState.initial()
+      userState: UserState.initial(),
     );
   }
 
@@ -29,5 +29,18 @@ class AppState {
       userState   : userState     ?? this.userState,
     );
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is AppState &&
+          runtimeType == other.runtimeType &&
+          searchQuery == other.searchQuery &&
+          userState == other.userState;
+
+  @override
+  int get hashCode =>
+      searchQuery.hashCode ^
+      userState.hashCode;
 
 }
