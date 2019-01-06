@@ -10,6 +10,7 @@ import 'src/routes.dart';
 @Component(
   selector: 'my-app',
   styleUrls: ['app_component.css'],
+  templateUrl: 'app_component.html',
   directives: [
     AppBarComponent,
     routerDirectives,
@@ -20,6 +21,9 @@ class AppComponent implements OnInit, AfterContentInit {
   AppComponent(this._store, this._loader);
   final Store<AppState> _store;
   final ComponentLoader _loader;
+
+  @ViewChild('homeContainer', read: ViewContainerRef)
+  ViewContainerRef homeContainer;
 
   @override
   void ngOnInit() => _store.dispatch(InitAction());
