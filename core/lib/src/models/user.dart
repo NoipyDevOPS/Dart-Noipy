@@ -10,14 +10,23 @@ enum UserListStatus {
   active,
   notActive
 }
-
+/**
+* User class create by Allan Nava
+ *
+*/
 class User {
   User({
     this.id,
-    this.name
+    this.firstname,
+    this.lastname,
+    this.job,
+    this.image,
   });
-
+  //
   final String id;
-  final String name;
-
+  final String firstname;
+  final String lastname;
+  final String job;
+  final String image;
+  //
 }
