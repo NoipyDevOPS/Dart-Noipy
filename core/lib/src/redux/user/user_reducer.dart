@@ -8,7 +8,7 @@ import 'package:core/src/redux/user/user_actions.dart';
 import 'package:core/src/redux/user/user_state.dart';
 //
 UserState userReducer(UserState state, dynamic action) {
-  print("liveChannelReducer - action: "+action.toString());
+  print("userReducer - action: "+action.toString());
   if (action is ReceivedUserAction){
     //to fix absolutly
   }
