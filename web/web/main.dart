@@ -1,5 +1,8 @@
+// # Author : Allan nava
+// # Date   : 05/01/2019
+// # Update : 08/01/2019
 import 'dart:html';
-
+//
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:core/core.dart';
@@ -12,15 +15,15 @@ import 'package:pwa/client.dart' as pwa;
 import 'package:redux/redux.dart';
 //import 'package:web/app_component.template.dart' as ng;
 import 'package:dart_noipy/app_component.dart' as ng;
-
+//
 import 'main.template.dart' as self;
-
+//
 final Store<AppState> _store = createStore(
   Client(),
   WebKeyValueStore(window.localStorage),
 );
 Store<AppState> storeFactory() => _store;
-
+//
 @GenerateInjector([
   const FactoryProvider(Store, storeFactory),
   const ClassProvider(Messages),
@@ -34,7 +37,7 @@ void main() async {
   
   runApp(ng.AppComponentFactory, createInjector: rootInjector);
 }
-
+//
 void _initializeTranslations() async {
   var locale = await findSystemLocale();
   /*final initializationSuccessful = await initializeMessages(locale);

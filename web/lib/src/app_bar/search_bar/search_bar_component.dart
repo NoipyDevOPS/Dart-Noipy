@@ -1,10 +1,13 @@
+// # Author : Allan nava
+// # Date   : 05/01/2019
+// # Update : 08/01/2019
 import 'dart:async';
 import 'dart:html';
-
+//
 import 'package:angular/angular.dart';
 import 'package:core/core.dart';
 import 'package:redux/redux.dart';
-
+//
 @Component(
   selector: 'search-bar',
   templateUrl: 'search_bar_component.html',
