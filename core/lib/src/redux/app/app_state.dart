@@ -1,8 +1,10 @@
-
+// # Author : Allan nava
+// # Date   : 05/01/2019
+// # Update : 08/01/2019
 import 'package:core/src/redux/user/user_state.dart';
 
 import 'package:meta/meta.dart';
-
+//
 @immutable
 class AppState {
   AppState({

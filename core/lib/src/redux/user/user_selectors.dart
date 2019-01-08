@@ -1,5 +1,8 @@
+// # Author : Allan nava
+// # Date   : 05/01/2019
+// # Update : 08/01/2019
 import 'dart:collection';
-
+//
 import 'package:core/src/models/user.dart';
 import 'package:core/src/redux/app/app_state.dart';
 import 'package:reselect/reselect.dart';
