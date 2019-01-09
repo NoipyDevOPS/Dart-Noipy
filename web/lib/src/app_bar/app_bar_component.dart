@@ -28,7 +28,7 @@ class AppBarComponent implements OnInit, OnDestroy {
   final Store<AppState> _store;
   final Router _router;
 
-  String get userName => _store.state.userState.activeUsers[0].name;
+  String get userName => _store.state.userState.activeUsers[0].firstname;
 
   StreamSubscription<RouterState> _routeListener;
   Timer _scrollTimer;
