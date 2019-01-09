@@ -50,7 +50,7 @@ List<User> _eventsWithSearchQuery(List<User> original, String searchQuery) {
   final searchQueryPattern = RegExp(searchQuery, caseSensitive: false);
 
   return original.where((user) {
-    return user.name.contains(searchQueryPattern) ||
-        user.name.contains(searchQueryPattern);
+    return user.firstname.contains(searchQueryPattern) ||
+        user.lastname.contains(searchQueryPattern);
   }).toList();
 }
