@@ -19,8 +19,7 @@
         </div>
 
         <h2 class="title">{{ emptyTitle ?? errorTitle ?? messages.oops}}</h2>
-        <p class="message">
-            {{ emptyMessage ?? errorMessage ?? messages.loadingMoviesError }}<br/>
+        <p class="message"><br/>
             <small *ngIf="!contentEmpty">(this might be caused by your ad blocker)</small>
         </p>
 

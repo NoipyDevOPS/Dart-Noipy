@@ -7,9 +7,10 @@ import 'package:core/core.dart';
 import 'package:redux/redux.dart';
 //
 import 'package:dart_noipy/src/common/loading_view/loading_view_component.dart';
+import 'package:dart_noipy/src/routes.dart';
 
 import '../restore_scroll_position.dart';
-
+//
 @Component(
   selector: 'home-page',
   styleUrls: ['home_page_component.css'],
@@ -19,6 +20,27 @@ import '../restore_scroll_position.dart';
     NgFor,
   ],
 )
-class EventsPageComponent{
+class HomePageComponent implements OnActivate {
+  HomePageComponent(this._store, this._router, this.messages);
+  final Store<AppState> _store;
+  final Router          _router;
+  final Messages        messages;
+  //
+  HomePageViewModel get viewModel =>
+      HomePageViewModel.fromStore(_store,);
+  //
+  //
+  @override
+  void onActivate(RouterState previous, RouterState current) {
+    var _additionalData = current.routePath.additionalData;
 
+  }
+  //
+  void openLiveDetails(User user) {
+    storeCurrentScrollPosition();
+    print(user.id);
+    print(user);
+    //final url = RoutePaths.eventDetails.toUrl();
+    //_router.navigate(url);
+  }
 }

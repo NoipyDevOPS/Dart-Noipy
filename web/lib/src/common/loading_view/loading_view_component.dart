@@ -7,6 +7,8 @@ import 'dart:html' as html;
 import 'package:angular/angular.dart';
 import 'package:core/core.dart';
 //
+import 'package:dart_noipy/src/common/loading_view/spinner_component.dart';
+//
 @Component(
   selector: 'loading-view',
   templateUrl: 'loading_view_component.html',
@@ -32,7 +34,7 @@ class LoadingViewComponent implements OnDestroy {
   String errorMessage;
 
   String get emptyTitle => contentEmpty ? messages.allEmpty : null;
-  String get emptyMessage => contentEmpty ? messages.noMoviesForToday : null;
+  //String get emptyMessage => contentEmpty ? messages.noMoviesForToday : null;
 
   @Output()
   Stream get actionButtonClicked => _tryAgainController.stream;
