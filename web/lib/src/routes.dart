@@ -9,7 +9,7 @@ import 'package:dart_noipy/src/home/home_page_component.template.dart' as home_p
 class RoutePaths {
   static final home = RoutePath(
     path: '/',
-    additionalData: UserListStatus.active,
+    additionalData: UserListType.Home,
     useAsDefault: true,
   );
 }
