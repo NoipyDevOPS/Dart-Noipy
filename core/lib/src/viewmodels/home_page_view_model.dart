@@ -11,7 +11,7 @@ import 'package:core/src/redux/user/user_actions.dart';
 //
 import 'package:meta/meta.dart';
 import 'package:redux/redux.dart';
-
+//
 class HomePageViewModel{
   HomePageViewModel({
     //@required this.loading_status,

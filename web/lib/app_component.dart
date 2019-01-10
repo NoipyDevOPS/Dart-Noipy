@@ -9,7 +9,7 @@ import 'package:redux/redux.dart';
 import 'src/app_bar/app_bar_component.dart';
 
 import 'src/routes.dart';
-
+//
 @Component(
   selector: 'my-app',
   styleUrls: ['app_component.css'],

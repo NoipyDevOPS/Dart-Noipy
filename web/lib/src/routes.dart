@@ -19,7 +19,7 @@ class Routes {
     RouteDefinition(
       routePath: RoutePaths.home,
       useAsDefault: true,
-      component: home_page.EventsPageComponentNgFactory,
+      component: home_page.HomePageComponentNgFactory,
     )
   ];
 }
