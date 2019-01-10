@@ -29,7 +29,6 @@ class HomePageComponent implements OnActivate {
   HomePageViewModel get viewModel =>
       HomePageViewModel.fromStore(_store, UserListType.Home);
   //
-  //
   @override
   void onActivate(RouterState previous, RouterState current) {
     var _additionalData = current.routePath.additionalData;

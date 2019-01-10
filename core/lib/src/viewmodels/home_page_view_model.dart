@@ -18,11 +18,11 @@ class HomePageViewModel{
     @required this.users,
     @required this.refreshHome,
   });
-
+  //
   final LoadingStatus status;
   final List<User> users;
   final Function refreshHome;
-
+  //
   static HomePageViewModel fromStore(
       Store<AppState> store,
       UserListType type,
@@ -31,8 +31,6 @@ class HomePageViewModel{
       status        : store.state.userState.loadingStatus,
       users         : store.state.userState.activeUsers,
       refreshHome   : () => store.dispatch(RefreshUser(type)),
-      //activeUsersSelector(store.state),
-      //refreshEvents: () => store.dispatch(RefreshEventsAction(type)),
     );
   }
 
