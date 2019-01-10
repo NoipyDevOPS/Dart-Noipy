@@ -35,7 +35,7 @@ void main() async {
   pwa.Client();
   await _initializeTranslations();
   
-  runApp(ng.AppComponentFactory, createInjector: rootInjector);
+  runApp(ng.AppComponentNgFactory, createInjector: rootInjector);
 }
 //
 void _initializeTranslations() async {
