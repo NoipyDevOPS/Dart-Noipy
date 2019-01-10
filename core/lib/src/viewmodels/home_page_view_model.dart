@@ -14,20 +14,20 @@ import 'package:redux/redux.dart';
 //
 class HomePageViewModel{
   HomePageViewModel({
-    //@required this.loading_status,
+    @required this.loading_status,
     @required this.users,
   });
 
-  //final LoadingStatus loading_status;
+  final LoadingStatus loading_status;
   final List<User> users;
 
   static HomePageViewModel fromStore(
     Store<AppState> store,
-    //UserListStatus loading_status,
+    LoadingStatus loading_status,
   ) {
     return HomePageViewModel(
-      //loading_status: store.state.userState.active,
-      users: store.state.userState.activeUsers,
+      loading_status  : store.state.userState.loadingStatus,
+      users           : store.state.userState.activeUsers,
       //activeUsersSelector(store.state),
       //refreshEvents: () => store.dispatch(RefreshEventsAction(type)),
     );

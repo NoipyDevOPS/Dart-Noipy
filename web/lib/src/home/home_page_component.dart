@@ -27,7 +27,7 @@ class HomePageComponent implements OnActivate {
   final Messages        messages;
   //
   HomePageViewModel get viewModel =>
-      HomePageViewModel.fromStore(_store,);
+      HomePageViewModel.fromStore(_store, LoadingStatus.success);
   //
   //
   @override

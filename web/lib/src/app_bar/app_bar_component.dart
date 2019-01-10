@@ -1,14 +1,15 @@
-import 'dart:async';
-
 // # Author : Allan nava
 // # Date   : 05/01/2019
-// # Update : 08/01/2019
+// # Update : 10/01/2019
+import 'dart:async';
+//
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:core/core.dart';
 import 'package:redux/redux.dart';
-//import 'package:web/src/routes.dart';
+//
 import 'package:dart_noipy/src/routes.dart';
+import 'package:dart_noipy/src/app_bar/scroll_utils.dart';
 import 'package:dart_noipy/src/app_bar/nav_bar/nav_bar_component.dart';
 //
 @Component(
@@ -38,12 +39,12 @@ class AppBarComponent implements OnInit, OnDestroy {
 
   @override
   void ngOnInit() {
-    //_listenForRoutes();
-    /*_scrollTimer = listenForScrollDirectionChanges((newDirection) {
-      if (!isEventDetailsPage) {
+    _listenForRoutes();
+    _scrollTimer = listenForScrollDirectionChanges((newDirection) {
+      if (!isUserDetailsPage) {
         hide = newDirection == ScrollDirection.down;
       }
-    });*/
+    });
   }
 
   @override
@@ -56,9 +57,7 @@ class AppBarComponent implements OnInit, OnDestroy {
   void _listenForRoutes() {
     _routeListener = _router.onRouteActivated.listen((route) {
       final path = route.routePath.path;
-      //isUserDetailsPage = path == RoutePaths.userDetails.path ||
-      //    path == RoutePaths.showDetails.path;
-
+      isUserDetailsPage = path == RoutePaths.home.path;
       hide = isUserDetailsPage;
     });
   }
