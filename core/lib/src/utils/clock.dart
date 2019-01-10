@@ -1,3 +1,6 @@
+// # Author : Allan nava
+// # Date   : 05/01/2019
+// # Update : 10/01/2019
 typedef DateTime DateTimeGetter();
 
 /// A class that has only one purpose: getting the current time.
