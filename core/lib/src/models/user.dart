@@ -4,11 +4,11 @@
 import 'package:meta/meta.dart';
 
 /**
- * User List Status
+ * User List Type
  */
-enum UserListStatus {
-  active,
-  notActive
+enum UserListType {
+  Home,
+  Other
 }
 /**
 * User class create by Allan Nava

@@ -6,10 +6,10 @@
     <loading-view [status]="viewModel.status"
                   [contentEmpty]="viewModel.users.isEmpty">
         <div class="grid-container">
-            <event-poster *ngFor="let user of viewModel.users"
+            <div *ngFor="let user of viewModel.users"
                           [user]="user"
                           (click)="openLiveDetails(user)">
-            </event-poster>
+            </div>
         </div>
     </loading-view>
 </div>

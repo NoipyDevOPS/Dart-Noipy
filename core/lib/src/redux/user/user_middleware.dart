@@ -1,3 +1,6 @@
+// # Author : Allan nava
+// # Date   : 05/01/2019
+// # Update : 10/01/2019
 import 'dart:async';
 //
 import 'package:core/src/models/user.dart';
@@ -8,7 +11,7 @@ import 'package:core/src/redux/user/user_actions.dart';
 import 'package:core/src/redux/app/app_state.dart';
 
 import 'package:redux/redux.dart';
-
+//
 class UserMiddleware extends MiddlewareClass<AppState> {
   UserMiddleware(this.api);
   final NoipyApi api;
@@ -19,7 +22,7 @@ class UserMiddleware extends MiddlewareClass<AppState> {
     //next(action);
     if (action is FetchUser){
 
-    }else if(action is RefreshUserStatus){
+    }else if(action is RefreshUser){
       //await _refreshEvents(action, next);
     }
   }

@@ -8,7 +8,7 @@ import 'package:redux/redux.dart';
 //
 import 'package:dart_noipy/src/common/loading_view/loading_view_component.dart';
 import 'package:dart_noipy/src/routes.dart';
-
+//
 import '../restore_scroll_position.dart';
 //
 @Component(
@@ -27,7 +27,7 @@ class HomePageComponent implements OnActivate {
   final Messages        messages;
   //
   HomePageViewModel get viewModel =>
-      HomePageViewModel.fromStore(_store, LoadingStatus.success);
+      HomePageViewModel.fromStore(_store, UserListType.Home);
   //
   //
   @override
