@@ -6,6 +6,7 @@
  *  */
 export 'src/models/user.dart';
 export 'src/models/event.dart';
+export 'src/models/loading_status.dart';
 //
 export 'src/i18n/messages.dart';
 //

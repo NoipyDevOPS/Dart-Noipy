@@ -1,3 +1,6 @@
+// # Author : Allan nava
+// # Date   : 05/01/2019
+// # Update : 10/01/2019
 import 'package:angular_router/angular_router.dart';
 import 'package:core/core.dart';
 
@@ -8,7 +11,7 @@ class RoutePaths {
     useAsDefault: true,
   );
 }
-
+//
 class Routes {
   static final List<RouteDefinition> all = [
     RouteDefinition(
