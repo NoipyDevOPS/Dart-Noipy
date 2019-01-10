@@ -1,6 +1,6 @@
 // # Author : Allan nava
 // # Date   : 05/01/2019
-// # Update : 08/01/2019
+// # Update : 10/01/2019
 import 'dart:html';
 //
 import 'package:angular/angular.dart';
@@ -13,8 +13,8 @@ import 'package:intl/intl_browser.dart';
 import 'package:key_value_store_web/key_value_store_web.dart';
 import 'package:pwa/client.dart' as pwa;
 import 'package:redux/redux.dart';
-//import 'package:web/app_component.template.dart' as ng;
-import 'package:dart_noipy/app_component.dart' as ng;
+//
+import 'package:dart_noipy/app_component.template.dart' as ng;
 //
 import 'main.template.dart' as self;
 //
