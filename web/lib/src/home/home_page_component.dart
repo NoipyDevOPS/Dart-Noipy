@@ -35,11 +35,11 @@ class HomePageComponent implements OnActivate {
 
   }
   //
-  void openLiveDetails(User user) {
+  void openUserDetails(User user) {
     storeCurrentScrollPosition();
     print(user.id);
     print(user);
-    //final url = RoutePaths.eventDetails.toUrl();
-    //_router.navigate(url);
+    final url = RoutePaths.userDetails.toUrl();
+    _router.navigate(url);
   }
 }
