@@ -1,6 +1,6 @@
 // # Author : Allan nava
 // # Date   : 05/01/2019
-// # Update : 10/01/2019
+// # Update : 12/01/2019
 import 'dart:async';
 //
 import 'package:angular/angular.dart';
@@ -11,6 +11,7 @@ import 'package:redux/redux.dart';
 import 'package:dart_noipy/src/routes.dart';
 import 'package:dart_noipy/src/app_bar/scroll_utils.dart';
 import 'package:dart_noipy/src/app_bar/nav_bar/nav_bar_component.dart';
+import 'package:dart_noipy/src/app_bar/search_bar/search_bar_component.dart';
 //
 @Component(
   selector: 'app-bar',
@@ -18,6 +19,7 @@ import 'package:dart_noipy/src/app_bar/nav_bar/nav_bar_component.dart';
   styleUrls: ['app_bar_component.css'],
   directives: [
     NavBarComponent,
+    SearchBarComponent,
     routerDirectives,
   ],
   exports: [RoutePaths],

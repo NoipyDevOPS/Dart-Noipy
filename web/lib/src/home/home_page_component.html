@@ -2,4 +2,15 @@
     <div class="page-title">
         <h3>Home</h3>
     </div>
+
+
+    <loading-view [status]="viewModel.status"
+                  [contentEmpty]="viewModel.users.isEmpty"
+                  [errorMessage]="messages.errorLoadingUsers"
+                  (actionButtonClicked)="viewModel.refreshHome()">
+
+        <div class="grid-container">
+        </div>
+    </loading-view>
+
 </div>
