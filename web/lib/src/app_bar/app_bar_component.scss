@@ -54,3 +54,73 @@ header {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+
+.logo {
+  position: relative;
+  display: flex;
+  color: #ffffff;
+  align-items: center;
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
+
+  img {
+    width: 28px;
+    height: 28px;
+    margin-top: 2px;
+  }
+}
+
+.theater-name {
+  font-size: 12px;
+  opacity: 0.7;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@include screen-size-tablet {
+  header {
+    height: 60px;
+
+    &.hidden {
+      top: -60px;
+    }
+  }
+
+  .theater-name {
+    display: none;
+  }
+
+  .name-and-selected-theater {
+    margin-left: 10px;
+  }
+
+  .logo {
+    img {
+      width: 32px;
+      height: 32px;
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  .mobile-logo-focus-trap {
+    display: none;
+  }
+
+  .app-bar-button.select-theater {
+    display: none;
+  }
+}
+
+@include screen-size-laptop {
+  .wrapper {
+    width: 70%;
+    min-width: 850px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
