@@ -5,6 +5,7 @@ import 'package:angular_router/angular_router.dart';
 import 'package:core/core.dart';
 //
 import 'package:dart_noipy/src/home/home_page_component.template.dart' as home_page;
+import 'package:dart_noipy/src/user_detail/user_details_component.template.dart' deferred as user_details;
 //
 class RoutePaths {
   static final home = RoutePath(
@@ -12,6 +13,9 @@ class RoutePaths {
     additionalData: UserListType.Home,
     useAsDefault: true,
   );
+
+  static final userDetails = RoutePath(path: 'user/:userId');
+
 }
 //
 class Routes {
@@ -20,6 +24,14 @@ class Routes {
       routePath: RoutePaths.home,
       useAsDefault: true,
       component: home_page.HomePageComponentNgFactory,
-    )
+    ),
+    RouteDefinition.defer(
+      routePath: RoutePaths.userDetails,
+      loader: () {
+        return user_details
+            .loadLibrary()
+            .then((_) => user_details.UserDetailsComponentNgFactory);
+      },
+    ),
   ];
 }

@@ -1,0 +1,18 @@
+<div class="container" [class.visible]="contentVisible" *ngIf="user != null">
+
+    <img src="images/back.svg" class="back" (click)="goBack()"/>
+
+    <div class="user">
+
+        <div class="event-information">
+            <h2 class="title">{{ user.firstname }}</h2>
+
+            <div class="body">
+                <p class="length"> </p>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
