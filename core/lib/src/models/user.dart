@@ -27,5 +27,11 @@ class User {
   final String lastname;
   final String job;
   final String image;
-  //
+
+  @override
+  String toString() {
+    return 'User{id: $id, firstname: $firstname, lastname: $lastname, job: $job, image: $image}';
+  }
+//
+
 }

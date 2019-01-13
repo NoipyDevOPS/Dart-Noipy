@@ -9,7 +9,15 @@
                   (actionButtonClicked)="viewModel.refreshHome()">
 
         <div class="grid-container">
+
+            <user-details *ngFor="let user of viewModel.users"
+                          [user]="user"
+                          (click)="openUserDetails(user)">
+
+            </user-details>
+
         </div>
+
     </loading-view>
 
 </div>

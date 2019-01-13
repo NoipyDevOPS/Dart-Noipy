@@ -1,8 +1,7 @@
 // # Author : Allan nava
 // # Date   : 05/01/2019
-// # Update : 08/01/2019
+// # Update : 13/01/2019
 import 'package:collection/collection.dart';
-import 'package:core/src/models/event.dart';
 import 'package:core/src/models/user.dart';
 import 'package:core/src/models/loading_status.dart';
 //
