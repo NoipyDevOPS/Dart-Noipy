@@ -10,7 +10,7 @@ import 'package:core/src/redux/user/user_state.dart';
 UserState userReducer(UserState state, dynamic action) {
   print("userReducer - action: "+action.toString());
   if (action is ReceivedUserAction){
-    //to fix absolutly
+    //
     return state.copyWith(
       loadingStatus : LoadingStatus.success,
       activeUsers   : action.users,

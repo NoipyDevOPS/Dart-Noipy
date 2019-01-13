@@ -21,7 +21,7 @@ import 'package:dart_noipy/src/routes.dart';
   ],
   pipes: [DatePipe],
 )
-class UserDetailsComponent implements OnInit, OnDestroy, OnActivate{
+class UserDetailsComponent implements OnInit, OnActivate, OnDestroy{
   UserDetailsComponent(this._store, this._router, this.messages);
   final Store<AppState> _store;
   final Router          _router;
@@ -37,6 +37,7 @@ class UserDetailsComponent implements OnInit, OnDestroy, OnActivate{
   void ngOnInit() {
     // Reset the scroll position in case this page was previously opened.
     html.window.scrollTo(0, 0);
+    print("UserDetailsComponent - ngOnInit");
   }
 
   @override
@@ -44,8 +45,8 @@ class UserDetailsComponent implements OnInit, OnDestroy, OnActivate{
 
   @override
   void onActivate(RouterState previous, RouterState current) {
+    print("UserDetailsComponent - onActivate");
     _navigatedFromApp = previous != null;
-
     _populateUserDetails(
       current.parameters['userId'],
     );
@@ -66,6 +67,8 @@ class UserDetailsComponent implements OnInit, OnDestroy, OnActivate{
   void _populateUserDetails(String userId,) {
     user = userByIdSelector(_store.state, userId);
     //
+    print("_populateUserDetails");
+    print(user);
     if (user != null) {
       _animateContentIntoView();
     } else {
@@ -73,7 +76,6 @@ class UserDetailsComponent implements OnInit, OnDestroy, OnActivate{
       _waitForUserDetails(userId);
     }
   }
-
   //
   void _waitForUserDetails(String userId) {
     final state     = _store.state.userState;
@@ -83,7 +85,7 @@ class UserDetailsComponent implements OnInit, OnDestroy, OnActivate{
       return;
     }
 
-    _userDetailsSubscription = _store.onChange.listen((state) {
+    _userDetailsSubscription    = _store.onChange.listen((state) {
       final state               = _store.state.userState;
       final hasFinishedLoading  = state.loadingStatus != LoadingStatus.loading;
 

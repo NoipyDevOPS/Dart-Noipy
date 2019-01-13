@@ -19,8 +19,8 @@ class HomePageViewModel{
   });
   //
   final LoadingStatus status;
-  final List<User> users;
-  final Function refreshHome;
+  final List<User>    users;
+  final Function      refreshHome;
   //
   static HomePageViewModel fromStore(
       Store<AppState> store,

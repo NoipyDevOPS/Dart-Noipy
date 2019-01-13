@@ -28,10 +28,12 @@ class UserState{
     LoadingStatus loadingStatus,
     List<User> activeUsers,
   }) {
-    return UserState(
+    var userState = UserState(
       loadingStatus : loadingStatus ?? this.loadingStatus,
       activeUsers   : activeUsers ?? this.activeUsers,
     );
+    print(userState);
+    return userState;
   }
 
   @override
@@ -44,5 +46,11 @@ class UserState{
   @override
   int get hashCode =>
       activeUsers.hashCode;
+
+  @override
+  String toString() {
+    return 'UserState{loadingStatus: $loadingStatus, activeUsers: ${activeUsers.toString()}';
+  }
+
 
 }

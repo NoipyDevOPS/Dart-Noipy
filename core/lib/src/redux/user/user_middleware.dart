@@ -42,7 +42,8 @@ class UserMiddleware extends MiddlewareClass<AppState> {
     var users       = UserParser.parse(userJson);
     var currentUser = _getDefaultUser(users);
 
-    next(InitCompleteAction(users, currentUser));
+    //next(InitCompleteAction(users, currentUser));
+    next(ReceivedUserAction(users));
   }
 
   Future<void> _fetchHomeUsers(NextDispatcher next) async {
