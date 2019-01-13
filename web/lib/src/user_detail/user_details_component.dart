@@ -24,11 +24,11 @@ import 'package:dart_noipy/src/routes.dart';
 class UserDetailsComponent implements OnInit, OnDestroy, OnActivate{
   UserDetailsComponent(this._store, this._router, this.messages);
   final Store<AppState> _store;
-  final Router _router;
-  final Messages messages;
-
+  final Router          _router;
+  final Messages        messages;
+  //
   User user;
-
+  //
   bool _navigatedFromApp  = false;
   bool contentVisible     = false;
   StreamSubscription<AppState> _userDetailsSubscription;
@@ -65,14 +65,38 @@ class UserDetailsComponent implements OnInit, OnDestroy, OnActivate{
   //
   void _populateUserDetails(String userId,) {
     user = userByIdSelector(_store.state, userId);
-
+    //
     if (user != null) {
-      /*_store.dispatch(FetchActorAvatarsAction(event));
-      _animateContentIntoView();*/
+      _animateContentIntoView();
     } else {
-      /*_store.dispatch(RefreshEventsAction(EventListType.nowInTheaters));
-      _store.dispatch(RefreshEventsAction(EventListType.comingSoon));
-      _waitForEventDetails(eventId, showId);*/
+      _store.dispatch(RefreshUser(UserListType.Home));
+      _waitForUserDetails(userId);
     }
   }
+
+  //
+  void _waitForUserDetails(String userId) {
+    final state     = _store.state.userState;
+    final isLoading = state.loadingStatus == LoadingStatus.loading;
+
+    if (!isLoading) {
+      return;
+    }
+
+    _userDetailsSubscription = _store.onChange.listen((state) {
+      final state               = _store.state.userState;
+      final hasFinishedLoading  = state.loadingStatus != LoadingStatus.loading;
+
+      if (hasFinishedLoading) {
+        _populateUserDetails(userId);
+        _userDetailsSubscription.cancel();
+        _userDetailsSubscription = null;
+
+        _animateContentIntoView();
+      }
+    });
+  }
+  //
+  void _animateContentIntoView() =>
+      Timer(Duration.zero, () => contentVisible = true);
 }

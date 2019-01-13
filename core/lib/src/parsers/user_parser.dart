@@ -20,7 +20,7 @@ class UserParser{
             image     : data[i]['image']
           ));
     }
-    print(users);
+    //print(users);
     return users;
   }
 }

@@ -21,18 +21,21 @@ import 'package:redux/redux.dart';
 class UserMiddleware extends MiddlewareClass<AppState> {
   UserMiddleware(this.api);
   final NoipyApi api;
-  
+  //
   @override
   Future<void> call(
     Store<AppState> store, dynamic action, NextDispatcher next) async {
-    //print("action UserMiddleware: "+action.toString());
-    if (action is InitAction){
+    print("action UserMiddleware: "+action.toString());
+    if (action is InitAction) {
       await _init(action, next);
-    }else if(action is RefreshUser){
+    } else if(action is RefreshUser){
       //await _refreshEvents(action, next);
+    }else if (action is InitCompleteAction){
+      await _fetchHomeUsers(next);
     }
-  }
 
+  }
+  //metodo di init
   Future<Null> _init(InitAction action, NextDispatcher next) async {
     var userJson    = PreloadedData.users;
     //print("usersJson: "+ userJson.toString());
@@ -42,6 +45,15 @@ class UserMiddleware extends MiddlewareClass<AppState> {
     next(InitCompleteAction(users, currentUser));
   }
 
+  Future<void> _fetchHomeUsers(NextDispatcher next) async {
+    print("_fetchHomeUsers");
+    //next(Re(UserListType.Home));
+    var userJson    = PreloadedData.users;
+    var users       = UserParser.parse(userJson);
+    //
+    next(ReceivedUserAction(users));
+  }
+  //
   User _getDefaultUser(List<User> allUsers){
     //var persistedUserId = keyValueStore.getString()
     return allUsers.first;

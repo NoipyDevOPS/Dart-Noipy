@@ -12,12 +12,12 @@ UserState userReducer(UserState state, dynamic action) {
   if (action is ReceivedUserAction){
     //to fix absolutly
     return state.copyWith(
-      loadingStatus: LoadingStatus.success,
-      activeUsers: action.users,
+      loadingStatus : LoadingStatus.success,
+      activeUsers   : action.users,
     );
-  }
+  }/*else if (action is ){
 
-
+  }*/
 
   return state;
 }

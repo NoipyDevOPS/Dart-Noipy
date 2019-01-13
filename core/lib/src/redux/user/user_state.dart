@@ -1,6 +1,6 @@
 // # Author : Allan nava
 // # Date   : 05/01/2019
-// # Update : 10/01/2019
+// # Update : 13/01/2019
 import 'package:core/src/models/user.dart';
 import 'package:core/src/models/loading_status.dart';
 import 'package:meta/meta.dart';
@@ -29,12 +29,12 @@ class UserState{
     List<User> activeUsers,
   }) {
     return UserState(
-      loadingStatus: loadingStatus ?? this.loadingStatus,
-      activeUsers: activeUsers ?? this.activeUsers,
+      loadingStatus : loadingStatus ?? this.loadingStatus,
+      activeUsers   : activeUsers ?? this.activeUsers,
     );
   }
 
-   @override
+  @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UserState &&

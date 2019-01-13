@@ -28,6 +28,8 @@ class HomePageComponent implements OnActivate {
   final Router          _router;
   final Messages        messages;
   //
+  UserListType _listType;
+  //
   HomePageViewModel get viewModel =>
       HomePageViewModel.fromStore(_store, UserListType.Home);
   //
@@ -35,6 +37,11 @@ class HomePageComponent implements OnActivate {
   void onActivate(RouterState previous, RouterState current) {
     var _additionalData = current.routePath.additionalData;
 
+    restoreScrollPositionIfNeeded(previous, RoutePaths.userDetails);
+
+    if (_listType == UserListType.Other) {
+      //_store.dispatch();
+    }
   }
   //
   void openUserDetails(User user) {
